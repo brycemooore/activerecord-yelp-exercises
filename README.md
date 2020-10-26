@@ -10,14 +10,14 @@ We'll be building out a restaurant domain in two stages. Remember to draw out th
 
 ### Stage 1
 
-We'll be creating the following models:
+<!-- We'll be creating the following models:
 - Restaurant
 -	Dish
--	Tag
+-	Tag -->
 
 **Migrations**
 
-- Restaurant
+<!-- - Restaurant
 	- name
 	- has many dishes
 - Dish
@@ -25,26 +25,26 @@ We'll be creating the following models:
 	- has many tags
 - Tag
 	- name
-	- has many dishes
+	- has many dishes -->
 
 *Do you need any join tables? What data should they have?*
 
 **Validations**
-
+<!-- 
 - Restaurants need a name
 - Dishes need a name and a restaurant
 - Tags need a name 3 characters or longer
 - Tag names can only be one word or two words, not more
-- Dishes can only have one of any particular tag
+- Dishes can only have one of any particular tag -->
 
 **Seeds**
 
 Create a seeds file that creates:
-
+<!-- 
 * 20 restaurants.
 * Each restaurant should have 10 dishes
 * Each Dish should have 3 tags
-* There should be only 10 or 15 tags, with names like 'Spicy' and 'Vegetarian'
+* There should be only 10 or 15 tags, with names like 'Spicy' and 'Vegetarian' -->
 
 *Reminder: Be DRY - use an array of names and iterate through them to create your restaurants*
 
@@ -55,11 +55,12 @@ Write the following methods. You should use ActiveRecord query methods to get th
 *Note: some helper methods you will need (e.g. the relationships between the models) are not listed here. Write them anyway!*
 
 *Restaurant*
-* `Restaurant.mcdonalds` - find the restaurant with the name `'McDonalds'`.
-* `Restaurant.tenth` - find the tenth restaurant
-* `Restaurant.with_long_names` - find all the restaurants with names longer than 12 characters
+<!-- * `Restaurant.mcdonalds` - find the restaurant with the name `'McDonalds'`. -->
+<!-- * `Restaurant.tenth` - find the tenth restaurant -->
+<!-- * `Restaurant.with_long_names` - find all the restaurants with names longer than 12 characters -->
 * `Restaurant.max_dishes` - find the restaurant with the most dishes
 * `Restaurant.focused` - find all the restaurants with fewer than 5 dishes
+
 * `Restaurant.large_menu` - find all the restaurants with more than 20 dishes
 * `Restaurant.vegetarian` - all restaurants where all of the dishes are tagged vegetarian
 * `Restaurant.name_like(name)` - all restaurants where the name is like the name passed in

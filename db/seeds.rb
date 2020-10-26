@@ -1,10 +1,10 @@
 
 tags = ["Spicy", "Vegetarian", "Vegan", "Comfort Food", "Chinese", "Mexican", "Thai", "Italian", "Savory", "Grilled"]
 
-# Restaurant.destroy_all
-# Tag.destroy_all
-# Dish.destroy_all
-# DishTag.destroy_all
+Restaurant.destroy_all
+Tag.destroy_all
+Dish.destroy_all
+DishTag.destroy_all
 
 20.times do 
     rest = Restaurant.create(name: Faker::Restaurant.name)

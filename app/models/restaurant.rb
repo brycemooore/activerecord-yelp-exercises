@@ -2,6 +2,10 @@ class Restaurant < ActiveRecord::Base
 
     has_many :dishes
 
+    def add_dish(name)
+        Dish.create(name: name, restaurant_id: self.id)
+    end 
+
     def self.tenth
         Restaurant.order(:id).limit(1).offset(9)
     end
@@ -15,22 +19,20 @@ class Restaurant < ActiveRecord::Base
     end
 
     def self.max_dishes
-        # Dish.group('restaurant_id').order('count_all DESC').count
-        Restaurant.where(dishes.count > 20)
-        # sorted_restaurants = Restaurant.all.sort {|rest_a,rest_b| rest_b.dishes.length <=> rest_a.dishes.length}
+        Restaurant.order("count_of_dishes DESC").limit(1)
     end
 
-    # def self.focused
-    #     Restaurant.where("dishes.count <= 5")
-    # end
+    def self.focused
+        Restaurant.where("count_of_dishes < 5")
+    end
 
-    # def self.large_menu
-    #     Restaurant.having("length(dishes) > 20")
-    # end
+    def self.large_menu
+        Restaurant.where("count_of_dishes > 20")
+    end
 
-    # def self.vegetarian
-    #     Dish.where(dish_tags: "Vegetarian", restaurant_id: )
-    # end
+    def self.vegetarian
+        Dish.where(dish_tags: "Vegetarian", restaurant_id: )
+    end
 
 
 end 

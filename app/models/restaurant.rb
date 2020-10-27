@@ -31,8 +31,8 @@ class Restaurant < ActiveRecord::Base
     end
 
     def self.vegetarian
-        Dish.where(dish_tags: "Vegetarian", restaurant_id: )
+        # Dish.where(dish_tags: "Vegetarian", restaurant_id: )
+            DishTag.where(tag: 'Vegetarian').select("restaurants")
     end
-
 
 end 
